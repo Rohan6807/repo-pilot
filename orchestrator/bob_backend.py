@@ -27,7 +27,7 @@ def run_bob_agent(mode_file, prompt, repo_root):
             master and feature/bulk-update"
     repo_root: working directory for Bob Shell to operate in
     """
-    with open(mode_file) as fh:
+    with open(mode_file, encoding="utf-8") as fh:
         role_definition = fh.read()
 
     full_prompt = f"{role_definition}\n\n---\n\nTASK:\n{prompt}"

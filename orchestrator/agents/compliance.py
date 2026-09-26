@@ -123,7 +123,7 @@ def _parse_checklist(path):
 def _read(path):
     if not os.path.isfile(path):
         return ""
-    with open(path) as fh:
+    with open(path, encoding="utf-8") as fh:
         return fh.read()
 
 
@@ -139,7 +139,7 @@ def _read_all_py(directory):
 
 
 def _write_json(path, data):
-    with open(path, "w") as fh:
+    with open(path, "w", encoding="utf-8") as fh:
         json.dump(data, fh, indent=2)
 
 

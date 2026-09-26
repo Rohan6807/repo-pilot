@@ -72,7 +72,7 @@ def run(repo_root, base_branch, feature_branch, sample_project_path="sample-proj
 def _read(path):
     if not os.path.isfile(path):
         return ""
-    with open(path) as fh:
+    with open(path, encoding="utf-8") as fh:
         return fh.read()
 
 

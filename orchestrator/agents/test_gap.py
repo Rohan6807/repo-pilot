@@ -60,7 +60,7 @@ def _read_all(directory):
         return combined
     for name in os.listdir(directory):
         if name.endswith(".py"):
-            with open(os.path.join(directory, name)) as fh:
+            with open(os.path.join(directory, name), encoding="utf-8") as fh:
                 combined += fh.read()
     return combined
 
@@ -100,7 +100,7 @@ class {_slug(path).title().replace('_', '')}Test(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 '''
-    with open(out_path, "w") as fh:
+    with open(out_path, "w", encoding="utf-8") as fh:
         fh.write(content)
     return out_path
 

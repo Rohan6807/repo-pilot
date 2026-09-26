@@ -60,7 +60,7 @@ graph TD
 {QUIZ}
 """
     out_path = os.path.join(repo_root, "onboarding-brief.md")
-    with open(out_path, "w") as fh:
+    with open(out_path, "w", encoding="utf-8") as fh:
         fh.write(brief)
     return out_path
 
@@ -73,7 +73,7 @@ def _build_risk_scan(repo_root, src_dir):
                 rel = os.path.relpath(os.path.join(root, name), repo_root)
                 scan[rel] = gitutil.churn(repo_root, rel)
     out_path = os.path.join(repo_root, "risk-scan.json")
-    with open(out_path, "w") as fh:
+    with open(out_path, "w", encoding="utf-8") as fh:
         json.dump(scan, fh, indent=2)
     return scan
 
@@ -129,14 +129,14 @@ QUIZ = """
 def _read(path):
     if not os.path.isfile(path):
         return ""
-    with open(path) as fh:
+    with open(path, encoding="utf-8") as fh:
         return fh.read()
 
 
 def _read_json(path):
     if not os.path.isfile(path):
         return {}
-    with open(path) as fh:
+    with open(path, encoding="utf-8") as fh:
         return json.load(fh)
 
 

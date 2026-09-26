@@ -43,6 +43,6 @@ def build_release_report(repo_root, all_findings, timings):
 
     report = "\n".join(lines)
     out_path = os.path.join(repo_root, "release-report.md")
-    with open(out_path, "w") as fh:
+    with open(out_path, "w", encoding="utf-8") as fh:
         fh.write(report)
     return out_path, score
